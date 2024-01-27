@@ -1,0 +1,26 @@
+python3 -m venv venv
+source venv/bin/activate
+
+# install AWS CLI
+# https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg ./AWSCLIV2.pkg -target /
+# verify that aws cli is installed
+which aws
+aws --version
+
+# install Node.js
+# https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac#homebrew
+
+# install AWS CDK
+# https://towardsthecloud.com/install-aws-cdk
+npm install -g aws-cdk
+cdk version
+cdk --help
+
+# set environment variables
+
+
+# for drifting, run the following command
+aws cloudformation delete-stack --stack-name CDKToolkit
+cdk bootstrap
