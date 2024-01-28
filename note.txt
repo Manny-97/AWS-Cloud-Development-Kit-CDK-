@@ -22,5 +22,18 @@ cdk --help
 
 
 # for drifting, run the following command
+# https://stackoverflow.com/questions/71280758/aws-cdk-bootstrap-itself-broken/71283964#71283964
 aws cloudformation delete-stack --stack-name CDKToolkit
 cdk bootstrap
+
+# cdk commands
+cdk init app --language python
+source .venv/bin/activate
+pip install -r requirements.txt
+pip install aws-cdk.aws-glue-alpha
+cdk deploy
+cdk destroy
+
+# To run the currency_generator
+cd to the python scriot directory and type the following command
+python currencies_generator.py
